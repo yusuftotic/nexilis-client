@@ -1,0 +1,13 @@
+.nav {
+  width: 1080px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navLogo {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 600;
+}

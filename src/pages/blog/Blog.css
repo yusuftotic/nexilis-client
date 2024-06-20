@@ -1,0 +1,69 @@
+.blog {
+  width: 1080px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+
+
+.postcard {
+  width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.postcard .postcardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.postcard .postcardHeader .postcardDate {
+  color: #6941C6;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.postcard .postcardHeader .postcardTitle {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.postcard .postcardContent {
+  color: #C0C5D0;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.postcard .postcardTags {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.postcard .postcardTags .postcardTag {
+  /* color: #027A48;
+  background-color: #027a482d; */
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  border: none;
+  border-radius: 100px;
+  padding: 4px 8px;
+}
+.postcardTag.tag1 {
+  color: #027A48;
+  background-color: #027A482d;
+}
+.postcardTag.tag2 {
+  color: #C4320A;
+  background-color: #C4320A2d;
+}
