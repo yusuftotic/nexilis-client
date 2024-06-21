@@ -7,7 +7,7 @@ export default function Blog() {
 
   return (
     <div className='blog'>
-      <Link to="/yazi" className="postcard">
+      <Link to="/post" className="postcard">
 
         <div className="postcardHeader">
 
@@ -25,7 +25,7 @@ export default function Blog() {
         </div>
 
       </Link>
-      <Link to="/yazi" className="postcard">
+      <Link to="/post" className="postcard">
 
         <div className="postcardHeader">
 
@@ -43,7 +43,7 @@ export default function Blog() {
         </div>
 
       </Link>
-      <Link to="/yazi" className="postcard">
+      <Link to="/post" className="postcard">
 
         <div className="postcardHeader">
 
@@ -61,7 +61,7 @@ export default function Blog() {
         </div>
 
       </Link>
-      <Link to="/yazi" className="postcard">
+      <Link to="/post" className="postcard">
 
         <div className="postcardHeader">
 
@@ -79,7 +79,7 @@ export default function Blog() {
         </div>
 
       </Link>
-      <Link to="/yazi" className="postcard">
+      <Link to="/post" className="postcard">
 
         <div className="postcardHeader">
 

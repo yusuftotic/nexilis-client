@@ -3,12 +3,13 @@ import React from 'react';
 import { FaGithub, FaXTwitter, FaLinkedin, FaInstagram } from "react-icons/fa6";
 
 import './Nav.css';
+import { Link } from 'react-router-dom';
 
 export default function Nav() {
   return (
     <div className="nav">
       
-      <h1 className="navLogo">nexilis</h1>
+      <Link to="/"><h1 className="navLogo">nexilis</h1></Link>
 
       <div className="navLinks">
         <a target='_blank' href="https://github.com/yusuftotic"><FaGithub className="navIcon" /></a>
