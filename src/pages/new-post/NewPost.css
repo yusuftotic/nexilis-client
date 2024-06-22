@@ -1,0 +1,106 @@
+.newpost {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.newpostHeader {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 20px;
+}
+
+.newpostHeader .newpostHeading {
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.newpostForm {
+  width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 720px;
+  gap: 30px;
+}
+
+.newpostForm .newpostTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newpostForm .newpostTitle .newpostTitleLabel {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.newpostForm .newpostTitle .newpostTitleInput {
+  color: #C0C5D0;
+  padding: 15px;
+  font-size: 17px;
+  font-weight: 400;
+  background-color: rgba(0, 0, 0, .3);
+  border: none;
+  outline: none;
+  border-radius: 7px;
+}
+.newpostForm .newpostTitle .newpostTitleInput::placeholder {
+  color: #484b4e;
+}
+
+.newpostForm .newpostText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newpostForm .newpostText .newpostTextLabel {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.newpostForm .newpostText .newpostTextInput {
+  color: #C0C5D0;
+  height: 400px;
+  padding: 15px;
+  font-size: 17px;
+  font-weight: 400;
+  background-color: rgba(0, 0, 0, .3);
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  resize: none;
+}
+.newpostForm .newpostText .newpostTextInput::placeholder {
+  color: #484b4e;
+}
+
+.newpostForm .newpostButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newpostForm .newpostButtonContainer .newpostButton {
+  width: 200px;
+  height: 40px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  background-color: #484b4e;
+}
+.newpostForm .newpostButtonContainer .newpostButton:hover {
+  cursor: pointer;
+  background-color: #333438;
+}

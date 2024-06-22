@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { LuPlusCircle, LuArchive, LuUser, LuLogOut } from 'react-icons/lu';
 
+import Side from '../../components/side/Side';
 
 import './Dashboard.css';
+import { Outlet, Route, Routes } from 'react-router-dom';
+import NewPost from '../new-post/NewPost';
 
 export default function Dashboard() {
   return (
@@ -11,50 +12,12 @@ export default function Dashboard() {
 
       <div className="sideContainer"></div>
 
-      <div className="side">
-
-        <div className="sideHeader">
-          <h1 className="sideLogo">nexilis</h1>
-        </div>
-
-        <div className="sideMenuWrapper">
-
-          <ul className="sideMenu">
-            <li className="sideMenuItem">
-              <Link to="/create" className="sideLink">
-                <LuPlusCircle className="sideIcon" />
-                New Post
-              </Link>
-            </li>
-
-            <li className="sideMenuItem">
-              <Link to="/posts" className="sideLink">
-                <LuArchive className="sideIcon" />
-                Post Archive
-              </Link>
-            </li>
-
-            <li className="sideMenuItem">
-              <Link to="/profile" className="sideLink">
-                <LuUser className="sideIcon" />
-                Profile
-              </Link>
-            </li>
-          </ul>
-
-          <div className="sideLogoutWrapper">
-            <button type="button" className="sideLogoutButton">
-              <LuLogOut className="sideIcon" />
-              Çıkış Yap
-            </button>
-          </div>
-
-        </div>
-
-      </div>
+      <Side />
 
       <div className="dashboard">
-        
+
+        <Outlet />
+
       </div>
 
     </div>

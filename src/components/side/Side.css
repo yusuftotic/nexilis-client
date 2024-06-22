@@ -1,0 +1,101 @@
+.side {
+  width: 256px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .3);
+  position: fixed;
+  padding-top: 50px;
+}
+
+.sideLogo {
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sideHeader {
+  width: 100%;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 48px;
+}
+
+.sideMenuWrapper {
+  width: 256px;
+  height: calc(100% - 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sideMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+.sideMenu .sideMenuItem {
+  width: 256px;
+  height: 48px;
+  list-style: none;
+  padding: 0 16px;
+}
+
+.sideMenu .sideMenuItem .sideLink {
+  color: #ffffff;
+  background-color: var(--background-color-light);
+  font-size: 16px;
+  letter-spacing: .2px;
+  font-weight: 500;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  border-radius: var(--border-radius-secondary);
+  padding: 0 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sideMenu .sideMenuItem .sideLink:hover {
+  opacity: .5;
+}
+
+.sideLogoutWrapper {
+  width: 256px;
+  height: 48px;
+  list-style: none;
+  padding: 0 16px;
+}
+
+.sideLogoutButton {
+  color: #ffffff;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: .2px;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.sideLogoutButton:hover {
+  opacity: .5;
+}
+
+.sideIcon {
+  width: 20px;
+  height: 20px;
+}
