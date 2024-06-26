@@ -17,8 +17,6 @@ export default function App() {
 
   const isDashboardRoute = location.pathname.startsWith('/dashboard');
 
-  console.log(location);
-
   return (
     <div className="app">
 
@@ -28,7 +26,7 @@ export default function App() {
 
         <Route path="/" element={<Blog />} />
 
-        <Route path="/post" element={<Post />} />
+        <Route path="/post/:post_id" element={<Post />} />
 
         <Route path="/login" element={<Login />} />
 

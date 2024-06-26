@@ -1,16 +1,34 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { LuUser, LuLock } from 'react-icons/lu';
 
+import { login } from '../../slices/authSlice';
 
 import './Login.css';
 
 export default function Login() {
 
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const [username, setUsername] = useState('yusuftotic');
 
-  const [password, setPassword] = useState('totic123');
+  const [password, setPassword] = useState('123456');
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    dispatch(login({ username, password }))
+    .then((response) => {
+      if (response.payload?.success && response.payload.success === true) navigate('/dashboard');
+    })
+    .catch((err) => {
+      console.error('Login error:', err);
+    })
+
+  }
 
   return (
     <div className="login">
@@ -21,7 +39,7 @@ export default function Login() {
 
         <div className="loginContent">
 
-          <form className="loginFormWrapper">
+          <form className="loginFormWrapper" onSubmit={handleLogin} >
             <div className="loginWelcome">
               <h2 className="loginWelcomeTitle">Giriş yap</h2>
             </div>

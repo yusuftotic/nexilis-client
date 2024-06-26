@@ -24,7 +24,7 @@ export default function NewPost() {
             value={title}
             className="newpostTitleInput"
             placeholder="Enter a title..."
-            onChange={(e) => setTitle(e.target.value.trim())}
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
 
@@ -36,7 +36,7 @@ export default function NewPost() {
             value={text}
             className="newpostTextInput"
             placeholder="Enter text..."
-            onChange={(e) => setText(e.target.value.trim())}
+            onChange={(e) => setText(e.target.value)}
           />
         </div>
 

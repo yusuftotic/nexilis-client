@@ -1,102 +1,57 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { getAllPosts } from '../../slices/postSlice';
 
 import './Blog.css';
-import { Link } from 'react-router-dom';
 
 export default function Blog() {
 
-  return (
-    <div className='blog'>
-      <Link to="/post" className="postcard">
+  const dispatch = useDispatch();
 
-        <div className="postcardHeader">
+  const posts = useSelector(state => state.post.posts);
 
-          <p className='postcardDate'>Friday, 21 June 2024</p>
-          <h2 className='postcardTitle'>Grid system for better Design User Interface</h2>
-        </div>
+  const [isLoading, setLoading] = useState(false);
 
-        <p className="postcardContent">
-          A grid system is a design tool used to arrange content on a webpage. It is a series of vertical and horizontal lines that create a matrix of intersecting points, which can be used to align and organize page elements. Grid systems are used to create a consistent look and feel across a website, and can help to make the layout more visually appealing and easier to navigate.
-        </p>
+  useEffect(() => {
 
-        <div className="postcardTags">
-          <p className="postcardTag tag1">AI</p>
-          <p className="postcardTag tag2">Software Development</p>
-        </div>
+    dispatch(getAllPosts());
 
-      </Link>
-      <Link to="/post" className="postcard">
+  }, [dispatch]);
 
-        <div className="postcardHeader">
+  useEffect(() => {
 
-          <p className='postcardDate'>Friday, 21 June 2024</p>
-          <h2 className='postcardTitle'>Grid system for better Design User Interface</h2>
-        </div>
+    posts[0]?.content && setLoading(true);
 
-        <p className="postcardContent">
-          A grid system is a design tool used to arrange content on a webpage. It is a series of vertical and horizontal lines that create a matrix of intersecting points, which can be used to align and organize page elements. Grid systems are used to create a consistent look and feel across a website, and can help to make the layout more visually appealing and easier to navigate.
-        </p>
+  }, [posts]);
 
-        <div className="postcardTags">
-          <p className="postcardTag tag1">AI</p>
-          <p className="postcardTag tag2">Software Development</p>
-        </div>
+  if (isLoading) {
+    return (
+      <div className='blog'>
+        {
+          posts.map(post => (
+            <Link to={`/post/${post._id}`} className="postcard" key={post._id}>
+  
+              <div className="postcardHeader">
+  
+                <p className='postcardDate'>Friday, 21 June 2024</p>
+                <h2 className='postcardTitle'>{post.title}</h2>
+              </div>
+  
+              <p className="postcardContent">{post.content.substring(0, 500)}</p>
+              {/* <p className="postcardContent">{post.content.length}</p> */}
+  
+              <div className="postcardTags">
+                <p className="postcardTag tag1">AI</p>
+                <p className="postcardTag tag2">Software Development</p>
+              </div>
+  
+            </Link>
+          ))
+        }
+      </div>
+    )
+  }
 
-      </Link>
-      <Link to="/post" className="postcard">
-
-        <div className="postcardHeader">
-
-          <p className='postcardDate'>Friday, 21 June 2024</p>
-          <h2 className='postcardTitle'>Grid system for better Design User Interface</h2>
-        </div>
-
-        <p className="postcardContent">
-          A grid system is a design tool used to arrange content on a webpage. It is a series of vertical and horizontal lines that create a matrix of intersecting points, which can be used to align and organize page elements. Grid systems are used to create a consistent look and feel across a website, and can help to make the layout more visually appealing and easier to navigate.
-        </p>
-
-        <div className="postcardTags">
-          <p className="postcardTag tag1">AI</p>
-          <p className="postcardTag tag2">Software Development</p>
-        </div>
-
-      </Link>
-      <Link to="/post" className="postcard">
-
-        <div className="postcardHeader">
-
-          <p className='postcardDate'>Friday, 21 June 2024</p>
-          <h2 className='postcardTitle'>Grid system for better Design User Interface</h2>
-        </div>
-
-        <p className="postcardContent">
-          A grid system is a design tool used to arrange content on a webpage. It is a series of vertical and horizontal lines that create a matrix of intersecting points, which can be used to align and organize page elements. Grid systems are used to create a consistent look and feel across a website, and can help to make the layout more visually appealing and easier to navigate.
-        </p>
-
-        <div className="postcardTags">
-          <p className="postcardTag tag1">AI</p>
-          <p className="postcardTag tag2">Software Development</p>
-        </div>
-
-      </Link>
-      <Link to="/post" className="postcard">
-
-        <div className="postcardHeader">
-
-          <p className='postcardDate'>Friday, 21 June 2024</p>
-          <h2 className='postcardTitle'>Grid system for better Design User Interface</h2>
-        </div>
-
-        <p className="postcardContent">
-          A grid system is a design tool used to arrange content on a webpage. It is a series of vertical and horizontal lines that create a matrix of intersecting points, which can be used to align and organize page elements. Grid systems are used to create a consistent look and feel across a website, and can help to make the layout more visually appealing and easier to navigate.
-        </p>
-
-        <div className="postcardTags">
-          <p className="postcardTag tag1">AI</p>
-          <p className="postcardTag tag2">Software Development</p>
-        </div>
-
-      </Link>
-    </div>
-  )
 }
