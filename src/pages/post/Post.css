@@ -44,3 +44,24 @@
   letter-spacing: .5px;
   line-height: 30px;
 }
+
+@media screen and (max-width: 760px) {
+
+  .post {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+}
+@media screen and (max-width: 760px) {
+  .blog {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .postcard {
+    width: 100%;
+
+  }
+  
+}

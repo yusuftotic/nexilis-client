@@ -1,5 +1,5 @@
 .blog {
-  width: 1080px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,4 +70,17 @@
 .postcardTag.tag2 {
   color: #C4320A;
   background-color: #C4320A2d;
+}
+
+@media screen and (max-width: 760px) {
+  .blog {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .postcard {
+    width: 100%;
+
+  }
+  
 }

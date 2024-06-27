@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getPostById } from '../../slices/postSlice';
 
 import './Post.css';
+import { formatDate } from '../../utils/utils';
 
 export default function Post() {
 
@@ -24,7 +25,7 @@ export default function Post() {
     <div className="post">
       <div className="postHeader">
         <h2 className="postTitle">{post.title}</h2>
-        <p className="postDate">Friday, 21 June 2024</p>
+        <p className="postDate">{formatDate(post.createdAt)}</p>
       </div>
       <div className="postContent">
         <p className="postText">{post.content}</p>
