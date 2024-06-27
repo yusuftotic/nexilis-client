@@ -51,9 +51,9 @@ const postSlice = createSlice({
         state.post = action.payload.data.post;
         // console.log(action.payload.data.post);
       })
-      .addCase(createNewPost.fulfilled, (state, action) => {
-        console.log(action.payload.data);
-      })
+      // .addCase(createNewPost.fulfilled, (state, action) => {
+      //   console.log(action.payload.data);
+      // })
   }
 });
 
