@@ -24,6 +24,17 @@ export const getPostById = createAsyncThunk(
   }
 );
 
+export const createNewPost = createAsyncThunk(
+  "post/createNewPost",
+  async ({ access_token, title, content }) => {
+
+    const data = await services.createNewPost({ access_token, title, content });
+
+    return data;
+
+  }
+)
+
 const postSlice = createSlice({
   name: "post",
   initialState: {
@@ -39,6 +50,9 @@ const postSlice = createSlice({
       .addCase(getPostById.fulfilled, (state, action) => {
         state.post = action.payload.data.post;
         // console.log(action.payload.data.post);
+      })
+      .addCase(createNewPost.fulfilled, (state, action) => {
+        console.log(action.payload.data);
       })
   }
 });

@@ -31,3 +31,25 @@ export const getPostById = async ({ post_id }) => {
   }
 
 }
+
+export const createNewPost = async ({ access_token, title, content }) => {
+
+  try {
+
+    const response = await API.post(`/post/create`, { title, content },
+      {
+        headers: {
+          Authorization: `Bearer: ${access_token}`
+        }
+      }
+    );
+
+    return response.data;
+
+  } catch (err) {
+
+    throw err;
+
+  }
+
+}
