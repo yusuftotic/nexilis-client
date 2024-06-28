@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Swal from 'sweetalert2';
+
+import { createNewPost } from '../../slices/postSlice';
 
 import './NewPost.css';
-import { createNewPost } from '../../slices/postSlice';
 
 export default function NewPost() {
 
@@ -17,16 +19,21 @@ export default function NewPost() {
     
     e.preventDefault();
 
-    console.log(access_token);
-    console.log(title);
-    console.log(content);
-
     dispatch(createNewPost({ access_token, title, content }))
     .then(response => {
       console.log('NewPost.js', response);
+      if (response.payload?.success) {
+        setTitle('');
+        setContent('');
+        Swal.fire({
+          title: "Your blog post has been successfully shared!",
+          icon: "success"
+        });
+      }
+      
     })
     .catch(err => {
-      console.log(err,234234);
+      console.log(err);
     })
 
   }

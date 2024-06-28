@@ -22,7 +22,7 @@ export default function Login() {
 
     dispatch(login({ username, password }))
     .then((response) => {
-      if (response.payload?.success && response.payload.success === true) navigate('/dashboard');
+      if (response.payload?.success && response.payload.success === true) navigate('/dashboard/new-post');
     })
     .catch((err) => {
       console.error('Login error:', err);

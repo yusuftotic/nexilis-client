@@ -24,6 +24,17 @@ export const login = createAsyncThunk(
   }
 );
 
+export const logout = createAsyncThunk(
+  "auth/logout",
+  async ({ access_token }) => {
+
+    const data = await services.logoutService({ access_token });
+
+    return data;
+
+  }
+)
+
 export const refreshSession = createAsyncThunk(
   'auth/refreshSession',
   async () => {
@@ -48,13 +59,16 @@ const authSlice = createSlice({
         state.user = action.payload.data;
       })
       .addCase(login.fulfilled, (state, action) => {
-        // console.log(action);
         state.access_token = action.payload.access_token,
         state.user = action.payload.data;
       })
       .addCase(refreshSession.fulfilled, (state, action) => {
         state.access_token = action.payload.access_token;
         state.user = action.payload.user;
+      })
+      .addCase(logout.fulfilled, (state, action) => {
+        state.access_token = '';
+        state.user = {};
       })
   }
 });

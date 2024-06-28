@@ -1,13 +1,25 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { LuHome, LuPlusCircle, LuArchive, LuUser, LuLogOut } from 'react-icons/lu';
 
-
+import { logout } from '../../slices/authSlice';
 
 import './Side.css';
 
 export default function Side() {
+
+  const dispatch = useDispatch();
+
+  const { access_token } = useSelector(state => state.auth);
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+
+    access_token && dispatch(logout({ access_token }))
+
+  } 
 
   return (
     <div className="side">
@@ -49,7 +61,7 @@ export default function Side() {
         </ul>
 
         <div className="sideLogoutWrapper">
-          <button type="button" className="sideLogoutButton">
+          <button type="button" className="sideLogoutButton" onClick={handleLogout}>
             <LuLogOut className="sideIcon" />
             Çıkış Yap
           </button>
