@@ -41,8 +41,7 @@
   font-size: 20px;
   font-weight: 400;
   text-align: left;
-  letter-spacing: .5px;
-  line-height: 30px;
+  line-height: 32px;
 }
 
 @media screen and (max-width: 760px) {
@@ -52,16 +51,12 @@
     padding: 0 20px;
   }
 
-}
-@media screen and (max-width: 760px) {
-  .blog {
-    width: 100%;
-    padding: 0 20px;
+  .postHeader .postTitle {
+    font-size: 32px;
   }
 
-  .postcard {
-    width: 100%;
-
+  .postContent .postText {
+    font-size: 18px;
+    line-height: 28px;
   }
-  
 }

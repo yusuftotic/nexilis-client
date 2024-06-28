@@ -4,6 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* position: fixed; */
+  /* background-color: #090D1F; */
 }
 
 .navLogo {

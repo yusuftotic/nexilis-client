@@ -24,6 +24,17 @@ export const login = createAsyncThunk(
   }
 );
 
+export const refreshSession = createAsyncThunk(
+  'auth/refreshSession',
+  async () => {
+
+    const data = await services.refreshSessionService();
+
+    return data;
+
+  }
+);
+
 const authSlice = createSlice({
   name: "auth",
   initialState: {
@@ -40,6 +51,10 @@ const authSlice = createSlice({
         // console.log(action);
         state.access_token = action.payload.access_token,
         state.user = action.payload.data;
+      })
+      .addCase(refreshSession.fulfilled, (state, action) => {
+        state.access_token = action.payload.access_token;
+        state.user = action.payload.user;
       })
   }
 });

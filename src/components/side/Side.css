@@ -1,16 +1,9 @@
 .side {
   width: 256px;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, .3);
   position: fixed;
   padding-top: 50px;
-}
-
-.sideLogo {
-  color: #ffffff;
-  font-size: 40px;
-  font-weight: 600;
-  text-align: center;
 }
 
 .sideHeader {
@@ -19,6 +12,13 @@
   display: grid;
   place-items: center;
   margin-bottom: 48px;
+}
+
+.sideLogo {
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
 }
 
 .sideMenuWrapper {
@@ -47,7 +47,6 @@
 
 .sideMenu .sideMenuItem .sideLink {
   color: #ffffff;
-  background-color: var(--background-color-light);
   font-size: 16px;
   letter-spacing: .2px;
   font-weight: 500;
@@ -57,7 +56,6 @@
   align-items: center;
   justify-content: flex-start;
   gap: 12px;
-  border-radius: var(--border-radius-secondary);
   padding: 0 12px;
   text-decoration: none;
   cursor: pointer;
@@ -98,4 +96,39 @@
 .sideIcon {
   width: 20px;
   height: 20px;
+}
+
+.sideBurgerClose {
+  /* visibility: hidden; */
+  color: #ffffff;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .side {
+    visibility: hidden;
+    background-color: #060916;
+  }
+
+  .sideLogo {
+    
+  }
+
+  .sideHeader {
+
+  }
+
+  .sideBurger {
+
+  }
+
+  .sideMenuWrapper {
+
+  }
+
 }

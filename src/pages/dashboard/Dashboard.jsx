@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Side from '../../components/side/Side';
 
 import './Dashboard.css';
-import { Outlet, Route, Routes } from 'react-router-dom';
-import NewPost from '../new-post/NewPost';
+import { Outlet } from 'react-router-dom';
 
 export default function Dashboard() {
+
   return (
     <div className="dashboardContainer">
 
-      <div className="sideContainer"></div>
+      <div className="sideContainer">
+        <div className="dashboardLogo">nexilis</div>
+      </div>
 
       <Side />
 

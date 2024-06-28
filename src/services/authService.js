@@ -30,3 +30,14 @@ export const loginService = async ({ username, password }) => {
   }
 
 }
+
+export const refreshSessionService = async () => {
+  try {
+    
+    const response = await API.get(`/auth/refresh-session`);
+    return response.data;
+
+  } catch (error) {
+    throw error;
+  }
+};

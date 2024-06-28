@@ -1,5 +1,8 @@
-import React from "react";
-import { Routes, Route, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+
+import { refreshSession } from "./slices/authSlice.js";
 
 import Nav from "./components/nav/Nav.jsx";
 import Blog from './pages/blog/Blog.jsx';
@@ -13,14 +16,43 @@ import './App.css';
 
 export default function App() {
 
-  const location = useLocation();
+  const { pathname } = useLocation();
 
-  const isDashboardRoute = location.pathname.startsWith('/dashboard');
+  const isDashboardRoute = pathname.startsWith('/dashboard');
+
+  const isLoginRoute = pathname.startsWith('/login');
+
+  const [loading, setLoading] = useState(true);
+
+  const dispatch = useDispatch();
+
+  const { access_token } = useSelector(state => state.auth);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+
+    if (pathname.includes('/dashboard')) {
+
+      if (!access_token) {
+        dispatch(refreshSession())
+          .then(response => {
+            if (!response.payload.access_token) navigate('/login');
+          })
+          .catch((err) => {
+            navigate('/login');
+            throw err;
+          })
+      }
+
+    }
+
+  }, [access_token, dispatch]);
 
   return (
     <div className="app">
 
-      {!isDashboardRoute && <Nav />}
+      {!isDashboardRoute && !isLoginRoute && <Nav />}
 
       <Routes>
 
