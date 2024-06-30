@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 import { getPostById } from '../../slices/postSlice';
 import { formatDate } from '../../utils/utils';
@@ -38,6 +39,14 @@ export default function Post() {
         isLoading
           ?
           <>
+            <Helmet>
+              <title>{post.title}</title>
+              <meta property="og:title" content={post.title} />
+              <meta property="og:description" content={post.content.substring(0, 100)} />
+              {/* <meta property="og:image" content={post.imageUrl} /> */}
+              <meta property="og:url" content={`https://nexilis.vercel.app/post/${post._id}`} />
+              <meta property="og:type" content="article" />
+            </Helmet>
             <div className="postHeader">
               <h2 className="postTitle">{post.title}</h2>
               <p className="postDate">{formatDate(post.createdAt)}</p>
