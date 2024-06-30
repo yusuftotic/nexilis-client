@@ -13,9 +13,9 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  const [username, setUsername] = useState('yusuftotic');
+  const [username, setUsername] = useState('');
 
-  const [password, setPassword] = useState('123456');
+  const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
