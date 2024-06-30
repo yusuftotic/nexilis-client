@@ -19,10 +19,32 @@ export default function Side() {
 
     access_token && dispatch(logout({ access_token }))
 
-  } 
+  }
 
   return (
     <div className="side">
+
+      <div className="privnav">
+
+        <div className="privnavMenu">
+          <Link to="/" className="privnavLink">
+            <LuHome className="privnavIcon" />
+          </Link>
+
+          <Link to="/dashboard/post-archive" className="privnavLink">
+            <LuArchive className="privnavIcon" />
+          </Link>
+
+          <Link to="/dashboard/new-post" className="privnavLink">
+            <LuPlusCircle className="privnavIcon" />
+          </Link>
+
+          <Link to="/dashboard/profile" className="privnavLink">
+            <LuUser className="privnavIcon" />
+          </Link>
+        </div>
+
+      </div>
 
       <div className="sideHeader">
         <h1 className="sideLogo">nexilis</h1>
@@ -34,28 +56,28 @@ export default function Side() {
           <li className="sideMenuItem">
             <Link to="/" className="sideLink">
               <LuHome className="sideIcon" />
-              Blog
+              <p>Blog</p>
             </Link>
           </li>
 
           <li className="sideMenuItem">
             <Link to="/dashboard/post-archive" className="sideLink">
               <LuArchive className="sideIcon" />
-              Post Archive
+              <p>Post Archive</p>
             </Link>
           </li>
 
           <li className="sideMenuItem">
             <Link to="/dashboard/new-post" className="sideLink">
               <LuPlusCircle className="sideIcon" />
-              New Post
+              <p>New Post</p>
             </Link>
           </li>
 
           <li className="sideMenuItem">
             <Link to="/dashboard/profile" className="sideLink">
               <LuUser className="sideIcon" />
-              Profile
+              <p>Profile</p>
             </Link>
           </li>
         </ul>
