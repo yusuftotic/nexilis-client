@@ -41,8 +41,8 @@ export default function Post() {
           <>
             <Helmet>
               <title>{post.title}</title>
-              <meta property="og:title" content={post.title} />
-              <meta property="og:description" content={post.content.substring(0, 100)} />
+              <meta property="og:title" content={post.title.substring(0, 35)} />
+              <meta property="og:description" content={post.content.substring(0, 50)} />
               {/* <meta property="og:image" content={post.imageUrl} /> */}
               <meta property="og:url" content={`https://nexilis.vercel.app/post/${post._id}`} />
               <meta property="og:type" content="article" />
