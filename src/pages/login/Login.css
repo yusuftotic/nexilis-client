@@ -12,7 +12,7 @@
   padding: 30px 50px;
   display: grid;
   place-items: center;
-  background-color: #ffffff;
+  background-color: rgba(0, 0, 0, .4);
   border-radius: 10px;
 }
 
@@ -25,23 +25,17 @@
 
 .loginHeader {
   width: 100%;
-  display: grid;
-  place-items: center;
 }
 
 .loginHeader .loginLogo {
   width: 100%;
-  color: var(--color-dark-primary);
+  color: #ffffff;
   font-size: 32px;
   font-weight: 600;
   text-align: center;
-  border-bottom: 2px solid #EFEFEF; /* #E7E7E7 */
+  border-bottom: 2px solid #EFEFEF;
+  /* #E7E7E7 */
   padding-bottom: 20px;
-}
-.loginLogo span {
-  color: var(--color-dark-primary);
-  font-size: 17px;
-  font-weight: 400;
 }
 
 .loginFormWrapper {
@@ -57,13 +51,13 @@
 }
 
 .loginWelcome .loginWelcomeTitle {
-  color: var(--color-dark-primary);
+  color: #ffffff;
   font-size: 32px;
   font-weight: 600;
 }
 
 .loginWelcome .loginWelcomeText {
-  color: var(--color-dark-secondary);
+  color: #ffffff;
   font-size: 15px;
   font-weight: 500;
 }
@@ -82,7 +76,7 @@
 }
 
 .loginLoginItem .loginLoginLabel {
-  color: var(--color-dark-primary);
+  color: #ffffff;
   font-size: 16px;
   font-weight: 500;
 }
@@ -97,7 +91,7 @@
 .loginLoginItem .loginLoginInputWrapper .loginLoginInputIcon {
   width: 20px;
   height: 20px;
-  color: var(--color-dark-secondary);
+  color: #000000;
   position: absolute;
   left: 15px;
 }
@@ -105,19 +99,19 @@
 .loginLoginItem .loginLoginInputWrapper .loginLoginInput {
   width: 300px;
   height: 40px;
-  color: var(--color-dark-primary);
+  color: #000000;
   font-size: 15px;
   font-weight: 500;
-  background-color: var(--background-color-dark);
   border: 2px solid transparent;
-  border-radius: var(--border-radius-secondary);
+  border-radius: 4px;
   padding: 0 15px 0 43px;
   outline: none;
 }
+
 .loginLoginItem .loginLoginInput:focus {
-  background-color: var(--background-color-light);
-  border-color: var(--color-dark-secondary);
+  color: #000000;
 }
+
 .loginLoginItem .loginLoginInput::placeholder {
   color: rgba(111, 118, 126, .8);
 }
@@ -128,15 +122,16 @@
   color: #ffffff;
   font-size: 16px;
   font-weight: 600;
-  background-color: #2A85FF;
+  background-color: #484b4e;
   border: none;
   border-radius: 5px;
   margin-top: 20px;
   outline: none;
   cursor: pointer;
 }
+
 .loginLoginButton:hover {
-  background-color: #0069f6;
+  background-color: #333438;
 }
 
 .loginBottomMessage {
@@ -156,4 +151,12 @@
 
 .loginBottomMessage .loginBottomLink:hover {
   color: #0069f6;
+}
+
+@media screen and (max-width: 760px) {
+
+  .loginContainer {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, .4);
+  }
 }

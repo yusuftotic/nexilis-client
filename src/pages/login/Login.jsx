@@ -21,12 +21,12 @@ export default function Login() {
     e.preventDefault();
 
     dispatch(login({ username, password }))
-    .then((response) => {
-      if (response.payload?.success && response.payload.success === true) navigate('/dashboard/new-post');
-    })
-    .catch((err) => {
-      console.error('Login error:', err);
-    })
+      .then((response) => {
+        if (response.payload?.success && response.payload.success === true) navigate('/dashboard/new-post');
+      })
+      .catch((err) => {
+        console.error('Login error:', err);
+      })
 
   }
 
@@ -38,6 +38,10 @@ export default function Login() {
       <div className="loginContainer">
 
         <div className="loginContent">
+
+          <div className="loginHeader">
+            <Link to="/"><h1 className="loginLogo">nexilis</h1></Link>
+          </div>
 
           <form className="loginFormWrapper" onSubmit={handleLogin} >
             <div className="loginWelcome">
